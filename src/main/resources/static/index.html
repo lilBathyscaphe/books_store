@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>bookstore</title>
+    <meta charset="UTF-8"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/fonts.css"/>
+    <link rel="stylesheet" href="css/syle.css"/>
+</head>
+<body>
+<div class="page_container">
+    <header class="header">
+        <div class="header_top_container">
+            <div class="header_menu">
+                <a href="#">Help Center</a>
+                <a href="#">Our Support</a>
+            </div>
+            <div class="header_user_profile">
+                <img src="img/avatar-01.png" class="header_icon"/>
+                <button class="header_username"></button>
+            </div>
+        </div>
+    </header>
+
+    <form id="authorizationForm" class="hidden">
+        <div class="authorization_error_message"></div>
+        <div><label> Login : <input type="text" name="login"/> </label></div>
+        <div><label> Password: <input type="password" name="password"/> </label></div>
+        <div><input type="submit" value="Sign In"/></div>
+    </form>
+
+    <div class="main_page hidden">
+        <div class="main_menu">
+            <div class="main_manu_add_container">
+                <div class="main_menu_add_btn hidden">
+                    <a href="#">ADD A BOOK</a>
+                </div>
+            </div>
+            <div class="main_menu_btns">
+                <div class="main_menu_row main_menu_now_reading">
+                    <a href="#">Now Reading</a>
+                </div>
+                <div class="main_menu_row main_menu_browse">
+                    <a href="#">Browse</a>
+                </div>
+                <div class="main_menu_row main_menu_buy_books">
+                    <a href="#">Buy Books</a>
+                </div>
+                <div class="main_menu_row main_menu_favorite_books">
+                    <a href="#">Favorite Books</a>
+                </div>
+                <div class="main_menu_row main_menu_whishlist">
+                    <a href="#">Whishlist</a>
+                </div>
+                <div class="main_menu_row main_menu_history">
+                    <a href="#">History</a>
+                </div>
+            </div>
+            <div class="main_menu_list">
+                <ul class="main_menu_tags">
+                </ul>
+            </div>
+            <div class="main_menu_last_action_list">
+            </div>
+        </div>
+
+        <div class="page_content">
+            <div class="books_page_container">
+                <div class="page_header">
+                    <h1>Browse Available Books</h1>
+                </div>
+                <div class="page_menu">
+                    <a href="#" class="filter_menu_btn active_filter_menu_btn">
+                        All Books
+                    </a>
+                    <a href="#" class="filter_menu_btn">
+                        Most Resent
+                    </a>
+                    <a href="#" class="filter_menu_btn">
+                        Most Popular
+                    </a>
+                    <a href="#" class="filter_menu_btn">
+                        Free Books
+                    </a>
+                    <div class="error_message_container"><b class="message"></b></div>
+                    <div class="search_box">
+                        <div class="input-wrapper">
+                            <input type="text" placeholder="Enter Keywords" class="input_search"
+                                   id="input_search"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="books_container">
+                    <div class="books">
+                    </div>
+                </div>
+            </div>
+            <div class="history_page_container hidden">
+                <div class="page_header">
+                    <h1>History</h1>
+                </div>
+                <div class="history_page_content">
+                </div>
+                <div class="history_messages_patterns">
+                    <div class="add_new_book_history_message hidden">
+                        <div class="history_message">
+                            You added new book:
+                            <br><b book_name></b>
+                            <br>written by:
+                            <br><b book_author></b>
+                        </div>
+                        <div class="history_message_ago">
+                        </div>
+                    </div>
+                    <div class="search_book_history_message hidden">
+                        <div class="history_message">
+                            Your search:
+                            <br><b search_query></b>
+                        </div>
+                        <div class="history_message_ago">
+                        </div>
+                    </div>
+                    <div class="book_rating_change_history_message hidden">
+                        <div class="history_message">
+                            You rated book:
+                            <br> <b book_name></b>
+                            <br>written by:
+                            <br> <b book_author></b>
+                            <br>on <b book_rating></b> stars
+                        </div>
+                        <div class="history_message_ago">
+                        </div>
+                    </div>
+
+                    <div class="add_tag_to_book_history_message hidden">
+                        <div class="history_message">
+                            You assigned tag:
+                            <br><b tag></b>
+                            <br>to book: <b book_name></b>
+                            <br>written by: <b book_author></b>
+                        </div>
+                        <div class="history_message_ago">
+                        </div>
+                    </div>
+
+                    <div class="remove_tag_from_book_history_message hidden">
+                        <div class="history_message">
+                            You removed tag:
+                            <br><b tag></b>
+                            <br>from book: <b book_name></b>
+                            <br>written by: <b book_author></b>
+                        </div>
+                        <div class="history_message_ago">
+                        </div>
+                    </div>
+
+                    <div class="create_tag_history_message hidden">
+                        <div class="history_message">
+                            You create tags:
+                            <br><b tag></b>
+                        </div>
+                        <div class="history_message_ago">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="history_navigation">
+                    <nav>
+                        <ul class="history_pagination">
+                            <!--                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>-->
+                            <!--                            <li class="page-item"><a class="page-link" href="#">1</a></li>-->
+                            <!--                            <li class="page-item"><a class="page-link" href="#">Next</a></li>-->
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="add_popup hidden">
+        <div class="add_popup_body">
+            <div class="add_popup_content">
+                <form class="add_popup_form">
+                    <div class="add_popup_cell">
+                        <div>Book Name</div>
+                        <input class="add_popup_cell_book_name" name="name"/>
+                    </div>
+                    <div class="add_popup_cell">
+                        <div>Author</div>
+                        <input class="add_popup_cell_author" name="author"/>
+                    </div>
+                    <div class="add_popup_cell">
+                        <div>Book Preview</div>
+                        <input class="add_popup_cell_image" type="file" accept="image/png"/>
+                    </div>
+                    <div class="add_popup_submit_container">
+                        <input type="submit" class="add_popup_submit" value="Submit"/>
+                        <input type="submit" class="add_popup_cancel" value="Cancel"/>
+                    </div>
+                </form>
+                <div class="add_popup_close_container">
+                    <button class="add_popup_close">&times;</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup_book_modal hidden">
+        <div class="popup_book_container">
+            <div class="popup_book"></div>
+            <button class="popup_book_close_btn">&times;</button>
+        </div>
+        <div class="book_tags_container">
+            <ul class="book_tags">
+            </ul>
+        </div>
+        <div class="tag_error_message_container">
+            <b class="tag_message"></b>
+        </div>
+        <div class="add_book_tag_container">
+            <input class="new_tag_name" type="text">
+            <button class="add_new_tag">add new tag</button>
+        </div>
+        <div class="popup_book_modal_decision">
+            <button class="popup_book_modal_save">save</button>
+            <button class="popup_book_modal_cancel">cancel</button>
+        </div>
+
+    </div>
+
+    <div class="popup_overlay"></div>
+
+
+    <footer class="footer">
+        <div class="footer_container">
+            <button class="footer_cog_btn"><i class="question_icon"></i></button>
+            <button class="footer_question_btn"><i class="cog_icon"></i></button>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+            integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+
+    <script src="js/ClassManager.js"></script>
+    <script src="js/emitter/EventEmitter.js"></script>
+
+    <script src="js/authorization/Authorization.js"></script>
+    <script src="js/authorization/AuthorizationView.js"></script>
+
+    <script src="js/books/BookModel.js"></script>
+    <script src="js/books/BookView.js"></script>
+    <script src="js/books/AddBookView.js"></script>
+    <script src="js/books/BookModalView.js"></script>
+    <script src="js/books/BookBean.js"></script>
+    <script src="js/books/UserFilter.js"></script>
+
+    <script src="js/tag/TagView.js"></script>
+    <script src="js/tag/TagModel.js"></script>
+    <script src="js/tag/TagBean.js"></script>
+    <script src="js/tag/SmallTagView.js"></script>
+
+    <script src="js/NavigationView.js"></script>
+    <script src="js/CookieFinder.js"></script>
+
+    <script src="js/history/HistoryModel.js"></script>
+    <script src="js/history/HistoryView.js"></script>
+    <script src="js/history/HistorySmallView.js"></script>
+    <script src="js/history/HistoryMessageCreator.js"></script>
+    <script src="js/history/HistoryBean.js"></script>
+    <script src="js/history/HistoryFilter.js"></script>
+
+    <script src="js/ErrorHandler.js"></script>
+
+    <script src="js/core.js"></script>
+</div>
+</body>
+
+</html>

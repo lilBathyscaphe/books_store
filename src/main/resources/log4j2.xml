@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="warn">
+    <Properties>
+        <property name="format">%d{DEFAULT_MICROS} [%X{login}] %-5level %c{2} - %msg%n</property>
+        <property name="log_folder">.logs/archive</property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="${format}"/>
+        </Console>
+
+        <RollingFile name="Rolling_File" fileName="${log_folder}logs.log" append="true"
+                     filePattern="${log_folder}/%d{dd MM yyyy}_logs.log">
+            <PatternLayout pattern="${format}"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="5 KB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="3"/>
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+        <Root level="debug">
+            <AppenderRef ref="Console" level="debug"/>
+            <AppenderRef ref="Rolling_File" level="debug"/>
+        </Root>
+    </Loggers>
+</Configuration>

@@ -1,0 +1,93 @@
+@font-face {
+    font-family: "ProximaNovaRegular";
+    src: url(../fonts/Proxima\ Nova\ Regular.otf) 
+        format("embedded-opntype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "ProximaNovaBold";
+    src: url(../fonts/Proxima\ Nova\ Bold.otf) 
+        format("embedded-opntype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?t58lrg');
+    src:  url('../fonts/icomoon.eot?t58lrg#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?t58lrg') format('truetype'),
+      url('../fonts/icomoon.woff?t58lrg') format('woff'),
+      url('../fonts/icomoon.svg?t58lrg#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-plus:before {
+    content: "\f067";
+  }
+  .icon-search:before {
+    content: "\f002";
+  }
+  .icon-star:before {
+    content: "\f005";
+  }
+  .icon-star-o:before {
+    content: "\f006";
+  }
+  .icon-th-list:before {
+    content: "\f00b";
+  }
+  .icon-cog:before {
+    content: "\f013";
+  }
+  .icon-gear:before {
+    content: "\f013";
+  }
+  .icon-clock-o:before {
+    content: "\f017";
+  }
+  .icon-book:before {
+    content: "\f02d";
+  }
+  .icon-check-circle:before {
+    content: "\f058";
+  }
+  .icon-question-circle:before {
+    content: "\f059";
+  }
+  .icon-shopping-cart:before {
+    content: "\f07a";
+  }
+  .icon-globe:before {
+    content: "\f0ac";
+  }
+  .icon-star-half-empty:before {
+    content: "\f123";
+  }
+  .icon-star-half-full:before {
+    content: "\f123";
+  }
+  .icon-star-half-o:before {
+    content: "\f123";
+  }
+  
+  
